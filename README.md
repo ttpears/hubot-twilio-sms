@@ -27,4 +27,4 @@ hubot>> Ok, I've send an SMS to <phonenumber>!
 
 ## NPM Module
 
-https://www.npmjs.com/package/hubot-hubot-twilio-sms
+https://www.npmjs.com/package/hubot-twilio-sms
