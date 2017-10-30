@@ -23,9 +23,19 @@ twSendFromNum = process.env.TWILIO_SOURCEPHONENUMBER
 # client = require('twilio')(twAccountSID, twAuthToken);
 
 module.exports = (robot) ->
-   robot.hear /send sms/i, (res) ->
+   robot.hear /send sms (.*)/i, (res) ->
+      pattern = ///
+         ^\(?(\d{3})\)? # Capture area code, ignore optional parens
+         [-\s]?(\d{3})  # Capture prefix, ignore optional dash or space
+         -?(\d{4})      # Capture line-number, ignore optional dash
+      ///
       console.log res
-      res.reply "Sure, what phone number did you want to send an SMS to?"
+      recipient = res.match[1]
+      res.reply "Ok, I see you want to send a SMS message to: " +
+         recipient.match(pattern)[1] +
+         recipient.match(pattern)[2] +
+         recipient.match(pattern)[3] +
+         ", right?"
       # Mock the API call for now
       # client.messages.create({
       #  to: recipient,
@@ -34,4 +44,3 @@ module.exports = (robot) ->
       #  }, (err, errmsg) => 
       #     msg.reply errmsg.sid
       #  );
-
