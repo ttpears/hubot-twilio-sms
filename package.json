@@ -1,7 +1,7 @@
 {
   "name": "hubot-hubot-twilio-sms",
   "description": "Leverage Twilio to send SMS via Hubot",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Tim Pearson <ttpears@gmail.com>",
   "license": "MIT",
   "keywords": "hubot, hubot-scripts, twilio, sms",
