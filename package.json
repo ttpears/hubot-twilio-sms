@@ -7,10 +7,10 @@
   "keywords": "hubot, hubot-scripts, twilio, sms",
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-hubot-twilio-sms.git"
+    "url": "git://github.com/ttpears/hubot-twilio-sms.git"
   },
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-hubot-twilio-sms/issues"
+    "url": "https://github.com/ttpears/hubot-twilio-sms/issues"
   },
   "dependencies": {
      "twilio": "^3.9.1"
