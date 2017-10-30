@@ -19,9 +19,19 @@ twAccountSID = process.env.TWILIO_SID
 twAuthToken = process.env.TWILIO_TOKEN
 twSendFromNum = process.env.TWILIO_SOURCEPHONENUMBER
 
-client = require('twilio')(accountSid, authToken);
+# Leaving commented out until closer to done
+# client = require('twilio')(twAccountSID, twAuthToken);
 
 module.exports = (robot) ->
    robot.hear /send sms/i, (res) ->
       console.log res
       res.reply "Sure, what phone number did you want to send an SMS to?"
+      # Mock the API call for now
+      # client.messages.create({
+      #  to: recipient,
+      #  from: twSendFromNum
+      #  body: msg,
+      #  }, (err, errmsg) => 
+      #     msg.reply errmsg.sid
+      #  );
+
